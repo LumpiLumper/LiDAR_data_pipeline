@@ -1,5 +1,4 @@
 import numpy as np
-import scipy.io as savemat
 import open3d as o3d
 import matplotlib.cm as cm
 
@@ -19,17 +18,15 @@ class PcapProcesser:
         )
         return cloud[mask]
     
-    def write_mat(self, cloud, file):
+    def write_pcd(self, cloud, file):
 
-        xyz = cloud['xyz'].astype(np.float32)
-        intensity = cloud['intensity'].reshape(-1, 1)
+        xyz = cloud[:,:3].astype(np.float32)
 
-        points_with_intensity = np.hstack((xyz, intensity))
 
-        pc_o3d = o3d.geometry.PointCloud()
-        pc_o3d.points = o3d.utility.Vector3dVector(xyz)
+        pcd = o3d.geometry.PointCloud()
+        pcd.points = o3d.utility.Vector3dVector(xyz)
 
-        
+        pcd.colors = o3d.utility.Vector3dVector(cloud[:, 3:6])
 
         # Write ASCII PCD (best for MATLAB)
         o3d.io.write_point_cloud(file, pcd, write_ascii=True)
