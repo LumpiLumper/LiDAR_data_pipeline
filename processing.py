@@ -5,6 +5,7 @@ python3 -m processing
 
 import os
 from velodyne_decoder import read_pcap
+from scipy.io import savemat
 import open3d as o3d
 import numpy as np
 from pcap_processer import PcapProcesser
@@ -45,23 +46,35 @@ t_end = timestamps[-1]
 duration = t_end - t_start
 
 # crop frames and save as pcd file ------------------------------------------------------
-processed_clouds: list[np.ndarray] = []
+mat_clouds_train = []
+mat_clouds_val = []
 pcap_processer = PcapProcesser()
 
 progress_1 = 0
 for frame_id, (timestamp, cloud) in enumerate(read_pcap(pcap_file)):
-    cropped_cloud = pcap_processer.crop_cloud(cloud=cloud)
-    processed_clouds.append(cropped_cloud)
     time_passed = timestamps[frame_id] - t_start
-    file_name = f"Frame {frame_id}.pcd"
-    if time_passed < duration * split_ratio:
-        file = os.path.join(train_dir, file_name)
-        pcap_processer.write_pcd(cloud, file)
+
+    xyz = cloud[:, 0:3]
+    intensity = cloud[:, 3]
+    
+    if time_passed <= split_ratio:
+        mat_clouds_train.append({
+            'Location': xyz,
+            'Intensity': intensity
+        })
     else:
-        file = os.path.join(val_dir, file_name)
-        pcap_processer.write_pcd(cloud, file)
+        mat_clouds_val.append({
+            'Location': xyz,
+            'Intensity': intensity
+        })
     
     progress = round(time_passed / duration * 100)
     if progress_1 < progress:
         print(f"File processing progress: {progress}%")
         progress_1 = progress
+
+train_file = os.path.join(train_dir, "train.mat")
+val_file = os.path.join(val_dir, "validation.mat")
+
+savemat(train_file, {'pointClouds': mat_clouds_train})
+savemat(val_file, {'pointClouds': mat_clouds_val})

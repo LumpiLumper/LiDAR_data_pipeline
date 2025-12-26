@@ -21,6 +21,9 @@ class PcapProcesser:
     def write_pcd(self, cloud, file):
 
         xyz = cloud[:,:3].astype(np.float32)
+        intensity = cloud[:, 3]
+        ring = cloud[:, 4]
+        time = cloud[:, 5]
 
 
         pcd = o3d.geometry.PointCloud()
