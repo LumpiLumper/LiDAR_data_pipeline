@@ -43,3 +43,10 @@ Once the environment is active, install the required libraries:
 ```bash
 pip install -r requirements.txt
 ```
+
+### 3. Run pipeline.py
+
+In Terminal:
+```bash
+python3 -m pipeline.pipeline
+```

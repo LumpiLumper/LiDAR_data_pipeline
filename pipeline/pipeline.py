@@ -1,6 +1,6 @@
 """
 run with:
-python3 -m pipeline.pcap_to_las_pipeline
+python3 -m pipeline.pipeline
 """
 import os
 import numpy as np
