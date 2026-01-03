@@ -1,0 +1,44 @@
+# ==========================================
+# OS Generated Files
+# ==========================================
+.DS_Store
+Thumbs.db
+
+# ==========================================
+# Python Dependencies & Environments
+# ==========================================
+.venv/
+env/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# ==========================================
+# MATLAB Generated Files
+# ==========================================
+*.asv
+*.mex*
+*.slxc
+*.log
+# Ignore Lidar Labeler session backups
+labelingSession.mat
+
+# ==========================================
+# Lidar Data & Large Binary Files (CRITICAL)
+# ==========================================
+# Ignore raw data folders to save repo space
+data/raw/
+data/pcap/
+*.pcap
+*.las
+*.pcd
+
+# If you want to keep the folder structure but ignore contents:
+# !data/pcd_converted/.gitkeep
+
+# ==========================================
+# Build & Distribution
+# ==========================================
+dist/
+build/
+*.egg-info/
