@@ -5,7 +5,7 @@ and processes it's clouds fit for use in FS-Driverless object identification, la
 
 ## Project Structure
 * `pipeline/` - Core Python scripts for processing PCAP to training and validation data. LAS clouds with raw intensity and timestamps and PCD scene ready for labeling in MatLab Labeler.
-* `raw/` - Directory for input .pcap files.
+* `raw/` - Directory for input .pcap file (only one file)
 * `training_data/` - Pipeline creats this folder containing all LAS files before datasplit (see pipeline.py; default datasplit is 85%) and a subfolder "pcd_scene" that can be used in MatLab Lidar Labeler.
 * `val_data/` - Analog to "training_data"
 * `requirements.txt` - Python dependencies list.
