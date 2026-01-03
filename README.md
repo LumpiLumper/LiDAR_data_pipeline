@@ -50,7 +50,7 @@ In Terminal:
 
 Windows: 
 ```bash
-python3 -m pipeline.pipeline
+python -m pipeline.pipeline
 ```
 Linux:
 ```bash
