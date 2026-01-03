@@ -27,7 +27,6 @@ labelingSession.mat
 # Lidar Data & Large Binary Files (CRITICAL)
 # ==========================================
 # Ignore raw data folders to save repo space
-data/raw/
 *.pcap
 *.las
 *.pcd
