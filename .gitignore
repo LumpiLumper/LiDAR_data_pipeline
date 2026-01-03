@@ -28,10 +28,10 @@ labelingSession.mat
 # ==========================================
 # Ignore raw data folders to save repo space
 data/raw/
-data/pcap/
 *.pcap
 *.las
 *.pcd
+*.Identifier
 
 # If you want to keep the folder structure but ignore contents:
 # !data/pcd_converted/.gitkeep
