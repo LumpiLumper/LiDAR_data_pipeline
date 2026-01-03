@@ -47,6 +47,12 @@ pip install -r requirements.txt
 ### 3. Run pipeline.py
 
 In Terminal:
+
+Windows: 
+```bash
+python3 -m pipeline.pipeline
+```
+Linux:
 ```bash
 python3 -m pipeline.pipeline
 ```
