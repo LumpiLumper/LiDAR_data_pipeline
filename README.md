@@ -5,14 +5,21 @@ and processes it's clouds fit for use in FS-Driverless object identification, la
 
 ## Project Structure
 * `pipeline/` - Core Python scripts for processing PCAP to training and validation data. LAS clouds with raw intensity and timestamps and PCD scene ready for labeling in MatLab Labeler.
-* `/raw/` - Directory for input .pcap files.
-* `/training_data/` - Pipeline creats this folder containing all LAS files before datasplit (see pipeline.py; default datasplit is 85%) and a subfolder "pcd_scene" that can be used in MatLab Lidar Labeler.
-* `/val_data/` - Analog to "training_data"
+* `raw/` - Directory for input .pcap files.
+* `training_data/` - Pipeline creats this folder containing all LAS files before datasplit (see pipeline.py; default datasplit is 85%) and a subfolder "pcd_scene" that can be used in MatLab Lidar Labeler.
+* `val_data/` - Analog to "training_data"
 * `requirements.txt` - Python dependencies list.
 
 ---
 
 ## Setup Instructions
+
+### 1. Clone the Repository
+run this in terminal:
+git clone [https://github.com/LumpiLumper/LiDAR_data_pipeline.git](https://github.com/LumpiLumper/LiDAR_data_pipeline.git)
+cd LiDAR_data_pipeline
+
+### 2. Setup virtual machine
 
 To ensure portability across different operating systems, we use a Virtual Environment.
 
@@ -28,9 +35,3 @@ source .venv/bin/activate
 
 Once the environment is active, install the required libraries:
 pip install -r requirements.txt
-
-
-### 1. Clone the Repository
-```bash
-git clone [https://github.com/LumpiLumper/LiDAR_data_pipeline.git](https://github.com/LumpiLumper/LiDAR_data_pipeline.git)
-cd LiDAR_data_pipeline
