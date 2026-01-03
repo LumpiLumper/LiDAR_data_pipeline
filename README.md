@@ -16,8 +16,10 @@ and processes it's clouds fit for use in FS-Driverless object identification, la
 
 ### 1. Clone the Repository
 run this in terminal:
+```bash
 git clone [https://github.com/LumpiLumper/LiDAR_data_pipeline.git](https://github.com/LumpiLumper/LiDAR_data_pipeline.git)
 cd LiDAR_data_pipeline
+```
 
 ### 2. Setup virtual machine
 
@@ -25,13 +27,19 @@ To ensure portability across different operating systems, we use a Virtual Envir
 
 Windows:
 run the following commands in PowerShell inside your data folder (...\create_training_data):
+```bash
 python -m venv .venv    
 .\.venv\Scripts\Activate.ps1
+```
 
 Linux/Mac:
-run the following commands in terminal inside your data folder (.../create_training_data)
+run the following commands in terminal inside your data folder (.../create_training_data):
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
+```
 
 Once the environment is active, install the required libraries:
+```bash
 pip install -r requirements.txt
+```
