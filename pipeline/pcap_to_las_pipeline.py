@@ -1,4 +1,7 @@
-
+"""
+run with:
+python3 -m pipeline.pcap_to_las_pipeline
+"""
 import os
 import numpy as np
 import laspy
