@@ -26,14 +26,14 @@ cd LiDAR_data_pipeline
 To ensure portability across different operating systems, we use a Virtual Environment.
 
 Windows:
-run the following commands in PowerShell inside your data folder (...\create_training_data):
+run the following commands in PowerShell inside your data folder (...\LiDAR_data_pipeline):
 ```bash
 python -m venv .venv    
 .\.venv\Scripts\Activate.ps1
 ```
 
 Linux/Mac:
-run the following commands in terminal inside your data folder (.../create_training_data):
+run the following commands in terminal inside your data folder (.../LiDAR_data_pipeline):
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
