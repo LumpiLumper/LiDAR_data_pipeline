@@ -17,7 +17,7 @@ and processes it's clouds fit for use in FS-Driverless object identification, la
 ### 1. Clone the Repository
 run this in terminal:
 ```bash
-git clone [https://github.com/LumpiLumper/LiDAR_data_pipeline.git](https://github.com/LumpiLumper/LiDAR_data_pipeline.git)
+git clone https://github.com/LumpiLumper/LiDAR_data_pipeline.git
 cd LiDAR_data_pipeline
 ```
 
