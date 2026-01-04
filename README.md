@@ -29,7 +29,11 @@ Windows:
 run the following commands in PowerShell inside your data folder (...\LiDAR_data_pipeline):
 ```bash
 python -m venv .venv    
-.\.venv\Scripts\Activate.ps1
+.\.venv\bin\activate.ps1
+```
+If you encounter an error it will most likely be because PowerShell blocks the execution of the activation script. Run this command to give one time authorisation to execute:
+```bash
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 ```
 
 Linux/Mac:
